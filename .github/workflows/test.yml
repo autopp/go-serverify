@@ -40,6 +40,7 @@ jobs:
         make test
     - uses: codecov/codecov-action@v4
       with:
+        file: ./coverprofile.out
         token: ${{ secrets.CODECOV_TOKEN }}
       if: ${{ steps.unittest.conclusion == 'success' || steps.unittest.conclusion == 'failure' }}
     - name: Build
